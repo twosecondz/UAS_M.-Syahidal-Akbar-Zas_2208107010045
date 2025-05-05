@@ -1,6 +1,3 @@
-Tentu! Berikut adalah contoh file `README.md` dalam format **Markdown** yang bisa kamu gunakan di repository GitHub proyek **Intelligent Email Writer for Students**:
-
-```markdown
 # 📝 Intelligent Email Writer for Students
 
 Proyek ini merupakan aplikasi berbasis Web yang memungkinkan mahasiswa membuat email secara otomatis dan profesional dengan bantuan teknologi Large Language Model (LLM) dari **Gemini API**.
@@ -20,7 +17,6 @@ Proyek ini merupakan aplikasi berbasis Web yang memungkinkan mahasiswa membuat e
 ## 📁 Struktur Proyek
 
 ```
-
 intelligent\_email\_writer/
 ├── .env                     # Berisi API Key Gemini
 ├── app.py                  # Frontend dengan Streamlit
