@@ -1,6 +1,6 @@
 # Result
-![Form](./Screenshot 2025-05-11 210444.png)
-![Result](./Screenshot 2025-05-11 210452.png)
+![Forms](https://github.com/twosecondz/UAS_M.-Syahidal-Akbar-Zas_2208107010045/blob/main/Screenshot%202025-05-11%20210444.png)
+![Result]([https://github.com/twosecondz/UAS_M.-Syahidal-Akbar-Zas_2208107010045/blob/main/Screenshot%202025-05-11%20210444.png](https://github.com/twosecondz/UAS_M.-Syahidal-Akbar-Zas_2208107010045/blob/main/Screenshot%202025-05-11%20210452.png))
 
 
 # 📝 Intelligent Email Writer for Students
