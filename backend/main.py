@@ -3,8 +3,9 @@ from typing import List, Optional
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from dotenv import load_dotenv
-from google import genai
-from google.genai import types
+# from google import genai
+
+import google.generativeai as genai
 
 load_dotenv()
 
@@ -12,11 +13,13 @@ GOOGLE_API_KEY = os.getenv("GEMINI_API_KEY")
 
 # inisialisasi Gemini client dan konfigurasi
 MODEL = "gemini-2.0-flash"
-client = genai.Client(api_key=GOOGLE_API_KEY)
+genai.configure(api_key=GOOGLE_API_KEY)
 
 app = FastAPI(title="Intelligent Email Writer API")
 
 # schema request
+
+
 class EmailRequest(BaseModel):
     category: str
     recipient: str
@@ -28,6 +31,8 @@ class EmailRequest(BaseModel):
     example_email: Optional[str] = None
 
 # fungsi untuk membentuk prompt teks dari data input pengguna
+
+
 def build_prompt(body: EmailRequest) -> str:
     """
     menghasilkan prompt teks berdasarkan data yang diberikan oleh pengguna.
@@ -59,19 +64,24 @@ def build_prompt(body: EmailRequest) -> str:
     return "\n".join(lines)
 
 # endpoint untuk generate email   ### UNTUK KODE NYA BISA DIUBAH SESUAI KEBUTUHAN ###
+
+
 @app.post("/generate/")
 async def generate_email(req: EmailRequest):
-    # ubah request menjadi prompt teks dengan fungsi build_prompt
     prompt = build_prompt(req)
 
-    # TODO: kirim prompt ke Gemini API
-    # response = ...
+    try:
+        model = genai.GenerativeModel(MODEL)
+        response = model.generate_content(prompt)
 
-    # TODO: ambil hasil teks dari response dan simpan ke variabel
-    # generated = ...
+        if not response.text:
+            raise HTTPException(
+                status_code=500, detail="Tidak ada hasil yang dihasilkan oleh Gemini API.")
 
-    # TODO: validasi hasil respon
-    # if not generated:
-    #     raise ValueError("Tidak ada hasil yang dihasilkan oleh Gemini API")
+        return {"generated_email": response.text}
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500, detail=f"Terjadi kesalahan saat mengakses Gemini API: {e}")
 
     return {"generated_email": generated}
