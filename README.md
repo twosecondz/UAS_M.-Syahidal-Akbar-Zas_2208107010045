@@ -1,6 +1,6 @@
 # Result
-![Form](Screenshot 2025-05-11 210444.png)
-![Result](Screenshot 2025-05-11 210452.png)
+![Form](./Screenshot 2025-05-11 210444.png)
+![Result](./Screenshot 2025-05-11 210452.png)
 
 
 # 📝 Intelligent Email Writer for Students
