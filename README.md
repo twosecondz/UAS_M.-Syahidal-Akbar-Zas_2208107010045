@@ -1,3 +1,8 @@
+# Result
+![Form](Screenshot 2025-05-11 210444.png)
+![Result](Screenshot 2025-05-11 210452.png)
+
+
 # 📝 Intelligent Email Writer for Students
 
 Proyek ini merupakan aplikasi berbasis Web yang memungkinkan mahasiswa membuat email secara otomatis dan profesional dengan bantuan teknologi Large Language Model (LLM) dari **Gemini API**.
